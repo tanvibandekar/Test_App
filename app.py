@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask import Flask, render_template
 
 # Create the Flask app
 app = Flask(__name__)
@@ -6,7 +7,7 @@ app = Flask(__name__)
 # Define a route for the home page
 @app.route('/')
 def home():
-    return "Welcome to the Flask App!"
+    return render_template('index.html')
 
 # Define a route with JSON response
 @app.route('/api/greet', methods=['GET'])
